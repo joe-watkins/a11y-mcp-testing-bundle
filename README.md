@@ -191,3 +191,28 @@ Perfect for teams wanting to standardize their accessibility testing workflow.
 ## License
 
 MIT
+
+## Example MCP Configuration
+``` json
+"A11y Personas MCP": {
+    "type": "stdio",
+    "command": "node",
+    "args": [
+        "/Users/JWatkin70/Sites/mcp/a11y-testing-bundle/servers/a11y-personas-mcp/main.js"
+    ]
+},
+"AxeCore MCP": {
+    "type": "stdio",
+    "command": "node",
+    "args": [
+        "/Users/JWatkin70/Sites/mcp/a11y-testing-bundle/servers/axecore-mcp-server/build/index.js"
+    ]
+},
+"ARC Issue Writer MCP": {
+    "type": "stdio",
+    "command": "node",
+    "args": [
+        "/Users/JWatkin70/Sites/mcp/a11y-testing-bundle/servers/accessibility-issues-template-mcp/dist/index.js"
+    ]
+}
+```
