@@ -31,21 +31,21 @@ async function installMCPServers() {
 
   // Define the MCP server entries for this bundle
   const newServers = {
-    "Accessibility Personas - MCP": {
+    "A11y Personas MCP": {
       "type": "stdio",
-      "command": "tsx",
+      "command": "node",
       "args": [
         path.join(bundleDir, "servers/a11y-personas-mcp/main.js")
       ]
     },
-    "AxeCore - MCP": {
+    "AxeCore MCP": {
       "type": "stdio",
       "command": "node",
       "args": [
         path.join(bundleDir, "servers/axecore-mcp-server/build/index.js")
       ]
     },
-    "ARC Issues Writer - MCP": {
+    "ARC Issue Writer MCP": {
       "type": "stdio",
       "command": "node",
       "args": [
