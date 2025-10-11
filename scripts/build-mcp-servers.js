@@ -17,7 +17,7 @@ const CONFIG = {
       name: 'ARC Issue Writer MCP',
       dir: 'accessibility-issues-template-mcp', 
       buildCommand: 'npm run build',
-      checkFiles: ['dist/index.js']
+      checkFiles: ['build/index.js']
     },
     {
       name: 'A11y Personas MCP',
