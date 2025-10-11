@@ -77,16 +77,14 @@ Get relevant personas:
 ```
 
 ### Step 4: Create Individual Issue Files
-For each formatted issue, create a separate file in the editor:
-```json
-{
-  "tool": "createFile",
-  "parameters": {
-    "path": "accessibility-issue-{severity}-{number}.md",
-    "content": "<formatted_issue_with_persona_impact>"
-  }
-}
-```
+For each formatted issue, create a separate file using the EXACT output from `format_violations` tool. 
+
+**CRITICAL**: Use the format_violations tool output exactly as provided. DO NOT create custom markdown formats.
+
+1. Take the output from `format_violations` tool
+2. Enhance ONLY the `[Why it is important]` section with persona impact details  
+3. Create file with the enhanced content using `createFile`
+4. DO NOT change any other formatting or field names
 
 ### Step 5: Generate Executive Summary
 Provide comprehensive report with:
@@ -126,40 +124,88 @@ Use this mapping to connect accessibility violations to real user impact:
 
 ## Issue File Format
 
-Each individual issue file should include:
+**CRITICAL**: Always use the exact output from the `format_violations` tool. The actual format includes:
 
-```markdown
-# {Issue Title}
+```
+[Severity]
+{1-Critical|2-Severe|3-Moderate|4-Minor}
 
-**Severity**: {Critical|Serious|Moderate|Minor}
-**Priority**: {Highest|High|Medium|Low}
-**WCAG**: {Guideline references}
+[Priority]
+{Highest|High|Medium|Low}
 
-## Description
-{Clear description of the accessibility violation}
+[URL/Path]
+{URL being tested}
 
-## User Impact
-{Specific personas affected and how they're impacted}
+[Steps to reproduce]
+{Numbered steps to reproduce the issue}
 
-## How to Fix
-{Specific technical instructions}
+[Element]
+{Element selector or description}
 
-## Code Example
+[What is the issue]
+{Description and technical details}
+
+[Why it is important]
+{Impact explanation - ENHANCE THIS SECTION with persona details}
+
+[Code reference]
 ```html
-{Example of problematic code and fix}
+{Current problematic code}
 ```
 
-## Testing Steps
-1. {Step-by-step verification instructions}
+[How to fix]
+{Step-by-step fix instructions}
 
-## Affected Users
-- **{Persona Name}**: {Specific impact description}
-- **{Persona Name}**: {Specific impact description}
-
-## Resources
-- [Link to WCAG guideline]
-- [Link to technique documentation]
+[Compliant code example]
+```html
+{Fixed code example}
 ```
+
+[How to test]
+Automated: {Automated testing steps}
+Manual: {Manual testing steps}
+
+[MagentaA11y]
+{Links to MagentaA11y resources or N/A}
+
+[Resources]
+{Relevant links and documentation}
+
+[WCAG]
+{WCAG guideline references}
+
+[Operating system]
+{OS from context}
+
+[Build Version]
+{Version from context}
+
+[Browser]
+{Browser from context}
+
+[Assistive technology]
+{List of relevant AT}
+```
+
+## Persona Integration Instructions
+
+When enhancing the `format_violations` tool output:
+1. Take the formatted output exactly as provided
+2. Enhance ONLY the `[Why it is important]` section by adding:
+   - General accessibility impact explanation
+   - **Affected User Groups** subsection with 2-3 most relevant personas
+   - Specific impact descriptions for each persona based on the barrier type
+3. Format the enhanced section as:
+   ```
+   [Why it is important]
+   {Original impact explanation}
+   
+   **Affected User Groups:**
+   - **{Persona Name}**: {Specific impact description}
+   - **{Persona Name}**: {Specific impact description}
+   - **{Persona Name}**: {Specific impact description}
+   ```
+4. DO NOT change any other formatting, field names, or structure
 
 ## Response Format
 
