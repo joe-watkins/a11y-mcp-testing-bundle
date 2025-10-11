@@ -1,0 +1,42 @@
+{
+  "mcpServers": [
+    {
+      "name": "axecore-mcp-server",
+      "displayName": "AxeCore MCP Server",
+      "gitUrl": "https://github.com/joe-watkins/axecore-mcp-server.git",
+      "directory": "./servers/axecore-mcp-server",
+      "port": 3001,
+      "startCommand": "npm start",
+      "buildCommand": "npm run build",
+      "installCommand": "npm install"
+    },
+    {
+      "name": "arc-issues-mcp",
+      "displayName": "ARC Issues Template Writer MCP",
+      "gitUrl": "https://github.com/joe-watkins/accessibility-issues-template-mcp.git", 
+      "directory": "./servers/accessibility-issues-template-mcp",
+      "port": 3002,
+      "startCommand": "npm start",
+      "buildCommand": "npm run build", 
+      "installCommand": "npm install"
+    },
+    {
+      "name": "personas-mcp",
+      "displayName": "Accessibility Personas MCP",
+      "gitUrl": "https://github.com/joe-watkins/a11y-personas-mcp.git",
+      "directory": "./servers/a11y-personas-mcp", 
+      "port": 3003,
+      "startCommand": "node server.js",
+      "buildCommand": "",
+      "installCommand": "npm install"
+    }
+  ],
+  "systemPrompt": {
+    "source": "./prompts/a11y-axe-testing.prompt.md",
+    "vscodePromptsPath": "~/Library/Application Support/Code/User/prompts/",
+    "filename": "a11y-axe-testing.prompt.md"
+  },
+  "logging": {
+    "level": "info"
+  }
+}

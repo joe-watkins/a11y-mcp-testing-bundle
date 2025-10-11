@@ -1,0 +1,29 @@
+{
+  "name": "a11y-testing-bundle",
+  "version": "1.0.0",
+  "description": "One-click installer for accessibility testing MCP servers and system prompt",
+  "main": "index.js",
+  "scripts": {
+    "setup": "node scripts/clone-repos.js && node scripts/build-servers.js",
+    "install-mcp": "node scripts/install-mcp-servers.js",
+    "install-prompt": "node scripts/install-prompt.js",
+    "install-all": "npm run setup && npm run install-mcp && npm run install-prompt",
+    "update": "node scripts/update-repos.js && node scripts/build-servers.js && npm run install-mcp",
+    "status": "node scripts/check-installation.js",
+    "uninstall": "node scripts/uninstall.js"
+  },
+  "keywords": [
+    "accessibility",
+    "mcp",
+    "axecore",
+    "a11y",
+    "testing"
+  ],
+  "author": "joe-watkins",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
